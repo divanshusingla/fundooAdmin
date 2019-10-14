@@ -1,27 +1,77 @@
 <div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-pills card-header-pills">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+  <div class="card-header" >
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="home" (click)="getList()">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" >Link 1 </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 2 </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Settings</a>
+      </li>
+      <li class="nav-item">
+          <button class="btn btn-success" style="margin-left: 850px" type="submit" (click)='logout()'>Logout</button>
+
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
-      </ul>
-    </div>
-<div clas="table-responsive">
-    <h1>Users List      </h1>
-    <br/>
-  <div >
-      <table class="table table-bordered table-striped table-hover"    id="userListTable">
-        <tr>
-          <th>FirstName</th>
-          <th>LastName</th>
-          <th>Role</th>
-          <th>Service</th>
-        </tr>
-      </table>
+    </ul>
   
-    </div>
+  </div>
+
+  <br><br>
+
   
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="card" (click)="serviceAdvance()">
+          <div class="card-body">
+            <h5 class="card-title align-items-center d-flex justify-content-center">Advance Users</h5>
+            <p class="card-text align-items-center d-flex justify-content-center" id="advanceData"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card" (click)="serviceBasic()">
+          <div class="card-body">
+            <h5 class="card-title align-items-center d-flex justify-content-center">Basic Users</h5>
+            <p class="card-text align-items-center d-flex justify-content-center" id="basicData"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="table-responsive">
+      <input class="form-control" id="myInput" type="text" placeholder="Search.." (click)="searchData()">
+      <br>
+      <h1>Users List</h1>
+      <br />
+      <div>
+        <table class="table table-bordered table-striped table-hover table-sm" id="userListTable">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+              <th>Service</th>
+            </tr>
+          </thead>
+          <tbody id="completeData">
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+      </div>  
+    </div>
   </div>

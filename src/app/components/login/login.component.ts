@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+import {AuthService} from '../../services/authService/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   data: any;
-  constructor(public router: Router) { }
+    constructor(public router: Router,private auth: AuthService) { }
 
   ngOnInit() {
     $('#submitLogin').on('click', function (e) {
@@ -27,15 +28,16 @@ export class LoginComponent implements OnInit {
       type: 'POST',
       dataType: 'json',
       data: this.data,
-      success: (reponse) => {
-        console.log(reponse);
+      success: (response) => {
+        console.log(response);
+        localStorage.setItem('id',response.id);
+        this.auth.sendToken(response.id);
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.log('Error in Operation', error);
       }
     });
-
   }
 
 }
