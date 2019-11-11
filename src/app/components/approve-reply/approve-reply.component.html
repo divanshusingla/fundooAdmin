@@ -1,0 +1,19 @@
+<table class="table table-bordered table-striped table-hover table-sm" id="userListTable">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="completeData">
+  <tr *ngFor="let answer of data">
+    <td [innerHTML]="answer.message" > 
+      {{answer.message}}
+    </td>
+    <td>
+        <button type="submit" (click)='approveAnswer(answer.id)'>Approve</button>
+        <button type="submit" (click)='rejectAnswer(answer.id)'>Reject</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

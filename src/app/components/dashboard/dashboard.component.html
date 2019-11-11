@@ -1,29 +1,24 @@
 <div class="card text-center">
-  <div class="card-header" >
+  <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
         <a class="nav-link" href="#" id="home" (click)="getList()">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" >Link 1 </a>
+        <button class="btn btn-success" type="submit" (click)='unapprovedComponent()'>Unapproved Answers</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 2 </a>
+        <a class="nav-link" href="#">Link 1 </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Settings</a>
       </li>
       <li class="nav-item">
-          <button class="btn btn-success" style="margin-left: 850px" type="submit" (click)='logout()'>Logout</button>
-
-        </li>
+        <button class="btn btn-success" style="margin-left: 700px" type="submit" (click)='logout()'>Logout</button>
+      </li>
     </ul>
-  
   </div>
-
   <br><br>
-
-  
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-4">
@@ -64,14 +59,14 @@
           </tbody>
         </table>
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
-      </div>  
+          <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>

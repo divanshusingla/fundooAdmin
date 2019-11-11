@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
 import {AuthService} from '../../services/authService/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
   data: any;
   countBasic : any;
   countAdvance : any;
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,@Inject(Router)  private router: Router,) { }
 
   ngOnInit() {
     $('#getUserList').on('click', function (e) {
@@ -50,7 +51,7 @@ export class DashboardComponent implements OnInit {
             usersData += '<td>' + value.lastName + '</td>';
             usersData += '<td>' + value.role + '</td>';
             usersData += '<td>' + value.service + '</td>';
-            usersData += '</td>'
+            usersData += '</tr>'
           });
         usersData += '</tbody>';
         $('table tbody').replaceWith(usersData);
@@ -145,4 +146,14 @@ export class DashboardComponent implements OnInit {
   {
     this.auth.logout();
   }
+
+
+
+  unapprovedComponent()
+  {
+    this.router.navigate(['approveAnswers']);
+  }
+
+
+
 }
